@@ -1,0 +1,143 @@
+<?php
+/**
+ * Plugin Name: myEASYhider
+ * Plugin URI: http://myeasywp.com/plugins/myeasyhider/
+ * Version: 1.1
+ * Author: Ugo Grandolini aka "camaleo"
+ *
+ * TOOL TO REMOVE ALL THE PLUGIN SETTINGS.
+ *
+ * !!! WARNING !!!
+ *
+ * This tool automatically removes ALL your myEASYhider settings without asking anything.
+ * For this reason this file is stored without extension, meaning myeasyhider-reset
+ * instead myeasyhider-reset.php
+ *
+ * By doing so, we prevent any unauthorized user to remove the plugin settings.
+ *
+ * Instructions:
+ *
+ * 1) Using an FTP program rename this file to "myeasyhider-reset.php"
+ *
+ * 2) On your browser enter the following address - be sure to REPLACE
+ *    "example.com" WITH the address of your blog:
+ *
+ *      http://example.com/wp-content/plugins/myeasyhider/myeasyhider-reset.php
+ *
+ * 3) Using an FTP program rename this file to "myeasyhider-reset"
+ *
+ */
+require_once('../../../wp-load.php');
+
+/**
+ * get the users list
+ */
+$sql = 'SELECT user_login FROM `'.$wpdb->users.'` ';
+$rows = $wpdb->get_results( $sql );
+foreach($rows as $row) {
+
+	/**
+	 * remove each user settings
+	 */
+	delete_option( 'meh_def_items'.$row->user_login );
+	delete_option( 'meh_ids'.$row->user_login );
+}
+
+/**
+ * remove the plugin settings
+ */
+delete_option( 'meh_allowed_users' );
+delete_option( 'meh_def_items' );
+delete_option( 'meh_footer_credits' );
+delete_option( 'meh_header_logo' );
+delete_option( 'meh_header_logo_height' );
+delete_option( 'meh_header_logo_width' );
+delete_option( 'meh_hf_bgcolor' );
+delete_option( 'meh_hf_bgcolortop' );
+delete_option( 'meh_hf_fgcolor' );
+delete_option( 'meh_ids' );
+delete_option( 'meh_isACTIVE' );
+delete_option( 'meh_login_href' );
+delete_option( 'meh_login_image' );
+delete_option( 'meh_login_message' );
+delete_option( 'meh_login_title' );
+delete_option( 'meh_personaloptions' );
+delete_option( 'meh_private' );
+delete_option( 'meh_searchid' );
+delete_option( 'meh_sub_add_new' );
+delete_option( 'meh_sub_all_links' );
+delete_option( 'meh_sub_all_pages' );
+delete_option( 'meh_sub_all_posts' );
+delete_option( 'meh_sub_all_users' );
+delete_option( 'meh_sub_appearance_background' );
+delete_option( 'meh_sub_appearance_editor' );
+delete_option( 'meh_sub_appearance_header' );
+delete_option( 'meh_sub_appearance_menus' );
+delete_option( 'meh_sub_appearance_themeoptions' );
+delete_option( 'meh_sub_appearance_themes' );
+delete_option( 'meh_sub_appearance_widgets' );
+delete_option( 'meh_sub_available_tools' );
+delete_option( 'meh_sub_background' );
+delete_option( 'meh_sub_categories' );
+delete_option( 'meh_sub_comments' );
+delete_option( 'meh_sub_dash_home' );
+delete_option( 'meh_sub_dash_updates' );
+delete_option( 'meh_sub_discussion' );
+delete_option( 'meh_sub_editor' );
+delete_option( 'meh_sub_export' );
+delete_option( 'meh_sub_general' );
+delete_option( 'meh_sub_header' );
+delete_option( 'meh_sub_home' );
+delete_option( 'meh_sub_import' );
+delete_option( 'meh_sub_installed_plugins' );
+delete_option( 'meh_sub_library' );
+delete_option( 'meh_sub_links_add_new' );
+delete_option( 'meh_sub_links_all_links' );
+delete_option( 'meh_sub_links_link_categories' );
+delete_option( 'meh_sub_link_categories' );
+delete_option( 'meh_sub_media' );
+delete_option( 'meh_sub_media_add_new' );
+delete_option( 'meh_sub_media_library' );
+delete_option( 'meh_sub_menus' );
+delete_option( 'meh_sub_pages_add_new' );
+delete_option( 'meh_sub_pages_all_pages' );
+delete_option( 'meh_sub_permalinks' );
+delete_option( 'meh_sub_plugins_add_new' );
+delete_option( 'meh_sub_plugins_editor' );
+delete_option( 'meh_sub_plugins_installed_plugins' );
+delete_option( 'meh_sub_posts_add_new' );
+delete_option( 'meh_sub_posts_all_posts' );
+delete_option( 'meh_sub_posts_categories' );
+delete_option( 'meh_sub_posts_tags' );
+delete_option( 'meh_sub_privacy' );
+delete_option( 'meh_sub_reading' );
+delete_option( 'meh_sub_settings_discussion' );
+delete_option( 'meh_sub_settings_general' );
+delete_option( 'meh_sub_settings_media' );
+delete_option( 'meh_sub_settings_permalinks' );
+delete_option( 'meh_sub_settings_privacy' );
+delete_option( 'meh_sub_settings_reading' );
+delete_option( 'meh_sub_settings_writing' );
+delete_option( 'meh_sub_tags' );
+delete_option( 'meh_sub_themeoptions' );
+delete_option( 'meh_sub_themes' );
+delete_option( 'meh_sub_tools_available_tools' );
+delete_option( 'meh_sub_tools_export' );
+delete_option( 'meh_sub_tools_import' );
+delete_option( 'meh_sub_updates' );
+delete_option( 'meh_sub_users_add_new' );
+delete_option( 'meh_sub_users_all_users' );
+delete_option( 'meh_sub_users_your_profile' );
+delete_option( 'meh_sub_widgets' );
+delete_option( 'meh_sub_writing' );
+delete_option( 'meh_sub_your_profile' );
+
+
+echo '<h3>All the myEASYhider plugin options are now removed.</h3>'
+	.'<p>The plugin is still active but it does not do his work until you reconfigure its options.</p>'
+	.'<p>Be sure to <span style="color:red;font-weight:bold;">rename this file as soon as possible</span> to avoid the risk to get the plugin options removed by someone else!</p>'
+
+	.'<br /><p><a href="http://'.$_SERVER['HTTP_HOST'].'">Click here to return to the home page</a>.</p>'
+;
+
+?>

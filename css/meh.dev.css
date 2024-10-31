@@ -1,0 +1,56 @@
+/**
+ * Package main CSS
+ *
+ * @package myeasyhider
+ * @author Ugo Grandolini
+ * @version 1.1.2
+ */
+div.meh-selector-img-29,
+div.meh-selector-img-33 {
+	width:490px;
+	height:335px;
+	border: 1px solid #454545;
+	border-radius: 8px;
+}
+div.meh-selector-img-29 {
+	background-image:url(../img/wp-dashboard-29-490.png);
+}
+div.meh-selector-img-33 {
+	/*background-image:url(../img/wp-dashboard-33b-490.png);*/
+	background-image:url(../img/wp-dashboard-331-490.png);
+}
+div.meh-selector-img-29,
+div.meh-selector-img-33 {
+	float:left;
+	/*background-image:url(../img/wp-dashboard-29-490.png);*/
+	/*background-image:url(../img/wp-dashboard-33-490.png);*/
+	/*width:490px;*/
+	/*height:335px;*/
+	margin:20px 0;
+	padding:0;
+}
+	div.meh-selector, div.meh-selector-selected {
+		position:relative;
+		float:left;
+		-moz-opacity:0.40;opacity:0.40;filter:alpha(opacity=40);
+		-moz-border-radius:3px;border-radius:3px;
+		background-color:green;
+	}
+	div.meh-selector-selected {
+		background-color:red;
+	}
+	div.meh-selector:hover, div.meh-selector-selected:hover {
+		cursor:pointer;
+		border:0px dotted red;
+		background-color:yellow;
+	}
+
+div.meh-submenu-title {
+	margin:0px 0 0 0;float:left;color:#f7ffff;background:#737373;width:100%;padding:0;
+}
+	p.meh-submenu-title {
+		font-weight:bold;margin:0;padding:3px 0 3px 6px;
+	}
+	.meh-submenu-item {
+		margin:0;padding:3px 0 3px 20px;color:#2175a3;background:#ffffff;
+	}
